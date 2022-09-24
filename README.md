@@ -1,3 +1,5 @@
 # java_october
 
-- Repository for Java.
+## Day 1
+
+
