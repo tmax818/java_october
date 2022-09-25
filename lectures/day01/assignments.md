@@ -1,8 +1,13 @@
 ## Today's Assignments
 --
-- First java Program
-- Cafe Java
-- Alfred Bot
-- Cafe Business Logic
-- Puzzling
-- Map of Hashmatique
+
+## Java Fundamentals (Day 1)
+
+
+|                                           |     |
+|-----------------------------------------------------------------------|:--------:|
+| [First Java Program](https://github.com/tmax818/FirstJavaProgram)     | Practice |
+| [Cafe Java](https://github.com/tmax818/CafeJava)                      | Practice |
+| [Cafe Business Logic](https://github.com/tmax818/CafeBusinessLogic)   | Core     |
+| [Puzzling](https://github.com/tmax818/Puzzling)                       | Practice |
+| [Map of Hashmatique](https://github.com/tmax818/MapOfHashmatique)	    | Practice |

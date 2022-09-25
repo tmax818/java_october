@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<a href="#">
+					  <img
+						src="./../../images/coding_dojo_logo_white.png"
+						alt="cd logo"
+						style="
+						  height: 200px;
+						  margin: 0 auto 4rem auto;
+						  background: transparent;
+						"
+						class="demo-logo"
+					  />
+					</a>
+				</section>
+				
+				  <section>
+					<img src="../../images/Java-Logo.webp" alt="java logo">
+				  </section>
+
+				  <section>
+					<h2>Day 1</h2>
+					<p>
+						Java Fundamentals
+					</p>
+				</section>
+				
+				
+				<section data-markdown="assignments.md"
+					data-separator="^---"
+					data-separator-vertical="^--"
+					data-separator-notes="^note:"
+					data-charset="iso-8859-15">
+				</section>
+
+				
+				<!-- <section data-auto-animate> -->
+					<section data-auto-animate>
+					<h1>Hello, World</h1>
+					<h2 data-id="code-title">Java Code</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					class Main{
+					}	
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+						<h2 data-id="code-title">Java Code</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							class Main{
+								public static void main(String[] args){
+								}
+							}
+						</code></pre>
+				</section>
+
+				<section data-auto-animate>
+						<h2 data-id="code-title">Java Code</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							class Main{
+								public static void main(String[] args){
+									System.out.println("Hello, World");
+								}
+							}
+						</code></pre>
+				</section>
+				<!-- </section> -->
+
+				<section>
+					<section id="fragments">
+						<h2>Alphabet Soup</h2>
+						<h3 class="fragment">How Java Works</h3>
+						<p> 
+						<span class="fragment">You need to install a</span>
+						<span class="fragment highlight-red">JDK</span> 
+						<span class="fragment">(Java Development Kit)</span> 
+						<span class="fragment">in order to write and execute Java programs.</span>
+						<span class="fragment">The JDK includes the</span>
+						<span class="fragment highlight-blue">JRE</span> 
+						<span class="fragment">(Java Runtime Environment)</span> 
+						<span class="fragment">which includes the </span>
+						<span class="fragment highlight-red">JVM</span> 
+						<span class="fragment">(Java Virtual Machine).</span> 
+						<span class="fragment">The JVM works like an adapter that allows you to</span>
+						<span class="fragment highlight-green">WORA</span> 
+						<span class="fragment">(Write Once, Run Anywhere).</span></p>
+					</section>
+
+
+	
+
+
+	
+
+			</div>
+
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>

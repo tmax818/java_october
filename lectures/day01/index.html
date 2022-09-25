@@ -95,7 +95,6 @@
 				</section>
 				<!-- </section> -->
 
-				<section>
 					<section id="fragments">
 						<h2>Alphabet Soup</h2>
 						<h3 class="fragment">How Java Works</h3>
@@ -115,9 +114,212 @@
 						<span class="fragment">(Write Once, Run Anywhere).</span></p>
 					</section>
 
+					<section data-markdown="datatypes.md"
+						data-separator="^---"
+						data-separator-vertical="^--"
+						data-separator-notes="^note:"
+						data-charset="iso-8859-15"
+						class="l-fit-text">
+					</section>
 
-	
+					<section>
 
+						<section data-auto-animate>
+							<h1>Variables</h1>
+						<h2 data-id="code-title">Java Code</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						class Main{
+							
+						}	
+						</code></pre>
+						</section>
+				
+						<section data-auto-animate>
+							<h1>Variables</h1>
+							<h2 data-id="code-title">Type Declaration</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								class Main{
+									int							
+								}	
+							</code></pre>
+						</section>
+										
+						<section data-auto-animate>
+							<h1>Variables</h1>
+							<h2 data-id="code-title">Provide variable name</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								class Main{
+									int	myInt;						
+								}	
+							</code></pre>
+						</section>
+										
+						<section data-auto-animate>
+							<h1>Variables</h1>
+							<h2 data-id="code-title">Initailze variable</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								class Main{
+									int	myInt = 42;						
+								}	
+							</code></pre>
+						</section>
+
+					</section>
+
+					<section>
+						<h1>Conditional</h1>
+
+						<section data-auto-animate>
+							<h2 data-id="code-title">if statments</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								boolean isRaining = true;
+								boolean isCold = true;
+							</code></pre>
+						</section>
+
+
+						<section data-auto-animate>
+							<h2 data-id="code-title">if statments</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								boolean isRaining = true;
+								boolean isCold = true;
+								if(isRaining) {
+									System.out.println("Bring an umbrella.");
+								}
+							</code></pre>
+						</section>
+												<section data-auto-animate>
+							<h2 data-id="code-title">if statments</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								boolean isRaining = true;
+								boolean isCold = true;
+								if(isRaining) {
+									System.out.println("Bring an umbrella.");
+								}
+							</code></pre>
+							<p>Bring an umbrella.</p>
+						</section>
+
+						<section data-auto-animate>
+							<h2 data-id="code-title">if statments</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								boolean isRaining = false;
+								boolean isCold = true;
+								if(isRaining) {
+									System.out.println("Bring an umbrella.");
+								} else {
+									System.out.println("Have fun!");
+								}
+							</code></pre>
+						</section>
+
+						<section data-auto-animate>
+							<h2 data-id="code-title">if statments</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								boolean isRaining = false;
+								boolean isCold = true;
+								if(isRaining) {
+									System.out.println("Bring an umbrella.");
+								} else {
+									System.out.println("Have fun!");
+								}
+							</code></pre>
+							<p>Have fun!</p>
+						</section>
+
+						<section data-auto-animate>
+							<h2 data-id="code-title">if statments</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								boolean isRaining = true;
+								boolean isCold = true;
+								if(isRaining) {
+									System.out.println("Bring an umbrella.");
+								}
+								else if(isCold) {
+									System.out.println("Wear a coat.");
+								}
+								else {
+									System.out.println("Have fun!");
+								}
+							</code></pre>
+						</section>
+
+						<section data-auto-animate>
+							<h2 data-id="code-title">if statments</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								boolean isRaining = true;
+								boolean isCold = true;
+								if(isRaining) {
+									System.out.println("Bring an umbrella.");
+								}
+								else if(isCold) {
+									System.out.println("Wear a coat.");
+								}
+								else {
+									System.out.println("Have fun!");
+								}
+							</code></pre>
+							<p>Bring an umbrella.</p>
+						</section>
+
+
+					</section>
+
+					<section>
+						<h1>Switch Statments</h1>
+
+						<section data-auto-animate>
+							<h2 data-id="code-title">if statments</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="1|2|6|7|8|14">
+								int choice = 2;
+								switch(choice){
+									case 1:
+										System.out.println("Yes");
+										break;
+									case 2:
+										System.out.println("No");
+										break;
+									case 3:
+										System.out.println("Maybe...");
+										break;
+									default:
+										System.out.println("None of the above");
+								}
+								
+							</code></pre>
+						</section>
+					</section>
+
+
+					<section>
+						<h4>Ternary Operators</h4>
+
+						<section data-auto-animate>
+							<h5 data-id="code-title">before</h5>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								boolean isRaining = true;
+    
+								if(isRaining) {
+									System.out.println("Bring an umbrella.");
+								}
+								else {
+									System.out.println("Have fun!");
+								}	
+							</code></pre>
+						</section>
+
+						<section data-auto-animate>
+							<h5 data-id="code-title">after</h5>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-noscroll>
+								boolean isRaining = true;
+    
+								System.out.println(isRaining ? "Bring an umbrealla" : "Have fun!");
+
+							</code></pre>
+						</section>
+					</section>
+					
+					
 
 	
 
@@ -140,6 +342,8 @@
 				progress: true,
 				center: true,
 				hash: true,
+				width: 1100,
+				height: 900,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
