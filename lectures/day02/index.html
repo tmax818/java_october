@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Java October</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="October Java - Coding Dojo - Burbank">
+		<meta name="author" content="Tyler Maxwell">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -20,6 +20,14 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="../../plugin/highlight/monokai.css">
+		<style>
+			.container{
+				display: flex;
+			}
+			.col{
+				flex: 2;
+			}
+			</style>
 	</head>
 
 	<body>
@@ -48,9 +56,9 @@
 				  </section>
 
 				  <section>
-					<h2>Day 1</h2>
+					<h2>Day 2</h2>
 					<p>
-						Java Fundamentals
+						Java OOP
 					</p>
 				</section>
 				
@@ -62,65 +70,56 @@
 					data-charset="iso-8859-15">
 				</section>
 
-				
-				<!-- <section data-auto-animate> -->
-					<section data-auto-animate>
-					<h1>Hello, World</h1>
-					<h2 data-id="code-title">Java Code</h2>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-					class Main{
-					}	
-					</code></pre>
+				<section>
+					<h2>Objects and Classes</h2>
+					<div  class="r-hstack">
+
+							<pre data-id="code"><code  width="400"class="hljs" data-trim>
+								// Tesla.java
+								class Tesla {
+									String owner = "Tyler";
+
+								}	
+							</code></pre>
+			
+							<pre data-id="code"><code width="400" class="hljs" data-trim>
+								// Main.java
+								class Main {
+									Tesla myTesla = new Tesla();
+									System.out.println(myTesla.owner);
+								}	
+							</code></pre>
+					</div>
+		
 				</section>
 
-				<section data-auto-animate>
-						<h2 data-id="code-title">Java Code</h2>
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							class Main{
-								public static void main(String[] args){
-								}
-							}
-						</code></pre>
+			
+				<section>
+					<h3>Member Variables (Instance Attributes)</h3>
 				</section>
-
-				<section data-auto-animate>
-						<h2 data-id="code-title">Java Code</h2>
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							class Main{
-								public static void main(String[] args){
-									System.out.println("Hello, World");
-								}
-							}
-						</code></pre>
-				</section>
-				<!-- </section> -->
 
 				<section>
-					<section id="fragments">
-						<h2>Alphabet Soup</h2>
-						<h3 class="fragment">How Java Works</h3>
-						<p> 
-						<span class="fragment">You need to install a</span>
-						<span class="fragment highlight-red">JDK</span> 
-						<span class="fragment">(Java Development Kit)</span> 
-						<span class="fragment">in order to write and execute Java programs.</span>
-						<span class="fragment">The JDK includes the</span>
-						<span class="fragment highlight-blue">JRE</span> 
-						<span class="fragment">(Java Runtime Environment)</span> 
-						<span class="fragment">which includes the </span>
-						<span class="fragment highlight-red">JVM</span> 
-						<span class="fragment">(Java Virtual Machine).</span> 
-						<span class="fragment">The JVM works like an adapter that allows you to</span>
-						<span class="fragment highlight-green">WORA</span> 
-						<span class="fragment">(Write Once, Run Anywhere).</span></p>
-					</section>
+					<h3>Getters, Setters & Access Modifiers</h3>
+				</section>
 
+				<section>
+					<h3>Constructors and Overloading</h3>
+				</section>
 
-	
+				<section>
+					<h3>
+						<code>this</code>
+					</h3>
+				</section>
 
+				<h3>Methods</h3>
+			</section>
 
-	
-
+				<section>
+					<h3>
+						<code>static</code>
+					</h3>
+				</section>
 			</div>
 
 		</div>
@@ -140,6 +139,8 @@
 				progress: true,
 				center: true,
 				hash: true,
+				width: 1400,
+				height: 900,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
