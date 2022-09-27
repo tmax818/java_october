@@ -75,24 +75,30 @@
 						<h2>Objects and Classes</h2>
 					</section>
 					<section>
+						<h2>Objects and Classes</h2>
 
-						<div  class="r-hstack">
-							<pre data-id="code"><code  width="400"class="hljs" data-trim>
-								// Tesla.java
-								class Tesla {
-									String owner = "Tyler";
-									
-								}	
-							</code></pre>
+						<!-- <div  class="r-hstack"> -->
+							<pre data-id="code">
+								<div  class="r-hstack">
+									<code  width="00"class="hljs" data-trim data-line-numbers="2">
+										// Tesla.java
+										class Tesla {
+											String owner = "Tyler";
+											
+										}	
+									</code>
+									<code width="400" class="hljs" data-trim data-line-numbers="3">
+										// Main.java
+										class Main {
+											Tesla myTesla = new Tesla();
+											System.out.println(myTesla.owner);
+										}	
+									</code>
+								</div>
+							</pre>
 			
-							<pre data-id="code"><code width="400" class="hljs" data-trim>
-								// Main.java
-								class Main {
-									Tesla myTesla = new Tesla();
-									System.out.println(myTesla.owner);
-								}	
-							</code></pre>
-						</div>
+							<pre data-id="code"></pre>
+						<!-- </div> -->
 					</section>
 						
 				</section>
@@ -100,7 +106,7 @@
 			
 				<section>
 					<section>
-						<h3>Member Variables (Instance Attributes)</h3>
+						<h3>Member Variables(Instance Attributes)</h3>
 					</section>
 					<section data-auto-animate>
 						<h2 data-id="code-title">Tesla Class</h2>
@@ -141,9 +147,9 @@
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 							// Tesla.java
 							class Tesla {
-								String owner = "Tyler";
-								String color = "red";
-								int Doors = 4;
+								private String owner = "Tyler";
+								private String color = "red";
+								private int Doors = 4;
 							}
 						</code></pre>
 					</section>
@@ -152,9 +158,11 @@
 						<pre data-id="code-animation"><code  class="hljs" data-trim data-line-numbers>
 							// Tesla.java
 							class Tesla {
-								String owner = "Tyler";
-								String color = "red";
-								int Doors = 4;
+								private String owner = "Tyler";
+								private String color = "red";
+								private int Doors = 4;
+
+								// getters and setters
 								public String getOwner() {
 									return owner;
 								}
@@ -264,18 +272,86 @@
 				</section>
 
 				<section>
-					<h3>
-						<code>this</code>
-					</h3>
+					<section>
+
+						<h3>
+							<code>this</code>
+							<p class="fragment">In Java, the <code>this</code> keyword refers to the current object within the context of an instance method or constructor.</p>
+						</h3>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">Person Class</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							class Person {
+								private int age;
+								private String name;
+								public Person(int ageParam, String nameParam) {
+									this.age = ageParam;
+									this.name = nameParam;
+								}
+							}
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">Person Class</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							class Person {
+								private int age;
+								private String name;
+								public Person(int ageParam, String nameParam) {
+									age = ageParam;
+									name = nameParam;
+								}
+							}
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<h2 data-id="code-title">Person Class</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							class Person {
+								private int age;
+								private String name;
+								public Person(int age, String name) {
+									this.age = age;
+									this.name = name;
+								}
+							}
+						</code></pre>
+					</section>
+
 				</section>
 
 
 			</section>
 
 				<section>
-					<h3>
-						<code>static</code>
-					</h3>
+					<section>							
+							<code>static</code>
+						</section>
+						<section data-auto-animate>
+							<h2 data-id="code-title">Tesla Class</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								// Tesla.java
+								class Tesla {
+									private String owner = "Tyler";
+									private String color = "red";
+									private int Doors = 4;
+								}
+							</code></pre>
+						</section>
+						<section data-auto-animate>
+							<h2 data-id="code-title">Tesla Class with <code>static</code> attributes</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								// Tesla.java
+								class Tesla {
+									private String owner = "Tyler";
+									private String color = "red";
+									private int Doors = 4;
+									private static String CEO = "Elon Musk";
+								}
+							</code></pre>
+						</section>
+
 				</section>
 			</div>
 
@@ -296,8 +372,8 @@
 				progress: true,
 				center: true,
 				hash: true,
-				width: 1400,
-				height: 1000,
+				width: 1200,
+				height: 600,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
