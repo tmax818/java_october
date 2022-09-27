@@ -71,14 +71,17 @@
 				</section>
 
 				<section>
-					<h2>Objects and Classes</h2>
-					<div  class="r-hstack">
+					<section>
+						<h2>Objects and Classes</h2>
+					</section>
+					<section>
 
+						<div  class="r-hstack">
 							<pre data-id="code"><code  width="400"class="hljs" data-trim>
 								// Tesla.java
 								class Tesla {
 									String owner = "Tyler";
-
+									
 								}	
 							</code></pre>
 			
@@ -89,8 +92,9 @@
 									System.out.println(myTesla.owner);
 								}	
 							</code></pre>
-					</div>
-		
+						</div>
+					</section>
+						
 				</section>
 
 			
@@ -183,6 +187,9 @@
 					<section>
 						<h3>Constructors and Overloading</h3>
 					</section>
+					<section>
+						<p>Overloading a method is just defining new method signatures for the same method name.</p>
+					</section>
 					<section data-auto-animate>
 						<h2 data-id="code-title">Tesla Class</h2>
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
@@ -195,18 +202,65 @@
 						</code></pre>
 					</section>
 					<section data-auto-animate>
-						<h2 data-id="code-title">Tesla Class</h2>
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<div  class="r-hstack">
+							<pre data-id="code"><code  width="400"class="hljs" data-trim>
 							// Tesla.java
 							class Tesla {
 								String owner = "Tyler";
 								String color = "red";
 								int Doors = 4;
+							}	
+							</code></pre>
+			
+							<pre data-id="code"><code width="400" class="hljs" data-trim>
+								// Main.java
+								class Main {
+									Tesla myTesla = new Tesla();
+									System.out.println(myTesla.owner);
+								}	
+							</code></pre>
+						</div>
 
-								
-							}
-						</code></pre>
-					</section>
+						</section>
+						<section data-auto-animate>
+							<h2 data-id="code-title">Tesla Class</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								// Tesla.java
+								class Tesla {
+									String owner = "Tyler";
+									String color = "red";
+									int Doors = 4;
+
+									Tesla(){}
+
+									Tesla(String owner){
+										this.owner = owner;
+									}
+								}
+							</code></pre>
+						</section>
+						<section data-auto-animate>
+							<h2 data-id="code-title">Tesla Class</h2>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								// Tesla.java
+								class Tesla {
+									String owner = "Tyler";
+									String color = "red";
+									int Doors = 4;
+
+									Tesla(){}
+
+									Tesla(String owner){
+										this.owner = owner;
+									}
+
+									Tesla(String owner, String, color){
+										this.owner = owner;
+										this.color = color;
+									}
+								}
+							</code></pre>
+						</section>
 				</section>
 
 				<section>
@@ -243,7 +297,7 @@
 				center: true,
 				hash: true,
 				width: 1400,
-				height: 700,
+				height: 1000,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
