@@ -101,7 +101,9 @@
  * @param {any} data The data for the new node.
  * @returns {SinglyLinkedList} This list.
  */
-insertAtFront(data) {}
+insertAtFront(data) {
+  ///some smarty-pants code goes here!!!
+}
 
 /**
  * Removes the first node of this list.
