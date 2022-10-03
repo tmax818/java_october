@@ -211,40 +211,76 @@ recursiveMax(runner = this.head, maxNode = this.head) {}
  * @returns {any} The data of the second to last node or null if there is no
  *    second to last node.
  */
- secondToLast() {
+secondToLast() {
   let runner = this.head
   while(runner.next.next !== null){
     runner = runner.next
   }
   return runner
- }
+}
 
- /**
-  * Removes the node that has the matching given val as it's data.
-  * - Time: O(?).
-  * - Space: O(?).
-  * @param {any} val The value to compare to the node's data to find the
-  *    node to be removed.
-  * @returns {boolean} Indicates if a node was removed or not.
-  */
- removeVal(val) {
+/**
+ * Removes the node that has the matching given val as it's data.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {any} val The value to compare to the node's data to find the
+ *    node to be removed.
+ * @returns {boolean} Indicates if a node was removed or not.
+ */
+removeVal(val) {
   if(this.head.data === val){
     this.head = this.head.next
   }
   
- }
- 
- // EXTRA
- /**
-  * Inserts a new node before a node that has the given value as its data.
-  * - Time: O(?).
-  * - Space: O(?).
-  * @param {any} newVal The value to use for the new node that is being added.
-  * @param {any} targetVal The value to use to find the node that the newVal
-  *    should be inserted in front of.
-  * @returns {boolean} To indicate whether the node was pre-pended or not.
-  */
- prepend(newVal, targetVal) {}
+}
+
+// EXTRA
+/**
+ * Inserts a new node before a node that has the given value as its data.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {any} newVal The value to use for the new node that is being added.
+ * @param {any} targetVal The value to use to find the node that the newVal
+ *    should be inserted in front of.
+ * @returns {boolean} To indicate whether the node was pre-pended or not.
+ */
+prepend(newVal, targetVal) {}
+
+//! //////////////// MONDAY ///////////////////
+
+
+/**
+ * Concatenates the nodes of a given list onto the back of this list.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {SinglyLinkedList} addList An instance of a different list whose
+ *    whose nodes will be added to the back of this list.
+ * @returns {SinglyLinkedList} This list with the added nodes.
+ */
+concat(addList) {}
+
+/**
+ * Finds the node with the smallest data and moves that node to the front of
+ * this list.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @returns {SinglyLinkedList} This list.
+ */
+moveMinToFront() {}
+
+// EXTRA
+/**
+ * Splits this list into two lists where the 2nd list starts with the node
+ * that has the given value.
+ * splitOnVal(5) for the list (1=>3=>5=>2=>4) will change list to (1=>3)
+ * and the return value will be a new list containing (5=>2=>4)
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {any} val The value in the node that the list should be split on.
+ * @returns {SinglyLinkedList} The split list containing the nodes that are
+ *    no longer in this list.
+ */
+splitOnVal(val) {}
 
 }
 

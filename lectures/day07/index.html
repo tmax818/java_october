@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Java October</title>
+
+		<meta name="description" content="October Java - Coding Dojo - Burbank">
+		<meta name="author" content="Tyler Maxwell">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../plugin/highlight/monokai.css">
+		<style>
+			.container{
+				display: flex;
+			}
+			.col{
+				flex: 2;
+			}
+			</style>
+	</head>
+
+	<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<a href="#">
+					<img
+					src="./../../images/coding_dojo_logo_white.png"
+					alt="cd logo"
+					style="
+						height: 200px;
+						margin: 0 auto 4rem auto;
+						background: transparent;
+					"
+					class="demo-logo"
+					/>
+				</a>
+			</section>
+				
+			<section>
+			<img width="500" src="../../images/Java-Logo.webp" alt="java logo">
+			</section>
+
+			<section>
+				<img src="../../images/spring.png" alt="">
+			</section>
+
+			<section>
+				<img src="../../images/spring-boot.webp" alt="">
+			</section>
+			
+			<section>
+				<h2>Day 7</h2>
+				<p>
+					Java Spring MVC
+				</p>
+			</section>
+				
+				
+			<section data-markdown="assignments.md"
+				data-separator="^---"
+				data-separator-vertical="^--"
+				data-separator-notes="^note:"
+				data-charset="iso-8859-15">
+			</section>
+
+			<section>
+
+				<section>
+					<h3>Models</h3>
+					<img src="../../images/mvc2.png" alt="" class="fragment">
+				</section>
+
+				<section>
+					<h3>Models in Spring</h3>
+					<h4>two parts:</h4>
+					<p class="fragment">Persistence Layer</p>
+					<p class="fragment">Service Layer</p>
+				</section>
+
+				<section>
+					<h1>Persistence Layer</h1>
+					<blockquote cite="https://login.codingdojo.com/m/315/9533/64296">
+						&ldquo;This layer is in charge of managing the application's data. PL is made up of Domain models and Repositories. We will use Repositories to access our database via an object relational mapper (ORM).&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<h1>Service Layer</h1>
+					<blockquote cite="https://login.codingdojo.com/m/315/9533/64296">
+						&ldquo;It is made up of classes that implement the business logic of our application. It will call on the repositories to execute some sort of transaction according to the request from the user.&rdquo;
+					</blockquote>
+				</section>
+			</section>
+
+			<section>
+				<h3>JPA</h3>
+			</section>
+
+			<section>
+				<h3>Connecting to MySQL</h3>
+			</section>
+
+			<section>
+				<h3>Domain Model</h3>
+			</section>
+
+			<section>
+				<h3>Repositories</h3>
+			</section>
+
+			<section>
+				<h3>Services</h3>
+			</section>
+
+		
+
+	
+
+	
+
+
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				width: 1200,
+				height: 600,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>

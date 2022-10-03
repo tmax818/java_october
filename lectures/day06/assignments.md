@@ -1,6 +1,6 @@
 ## Today's Assignments
 --
-## Java Spring Session (Day 6)
+## Java Spring Session and Forms (Day 6)
 
 |                                           |     |
 |---------------------------------------------------------------|:--------:|
