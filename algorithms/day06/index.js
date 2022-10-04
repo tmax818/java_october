@@ -4,6 +4,12 @@ and the empty methods below the constructor.
 */
 class Node {
     // TODO: add code for the Node class
+    constructor(data){
+      this.data = data;
+      this.next = null;
+      this.prev = null;
+    }
+
 }
 /**
  * A class to represent a doubly linked list and contain all of it's methods.
