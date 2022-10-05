@@ -98,7 +98,28 @@ class Node {
  * @param {any} newVal Data for the new node.
  * @returns {boolean} Indicates if the new node was added.
  */
-insertAfter(targetVal, newVal) {}
+insertAfter(targetVal, newVal) {
+  if(this.tail.data === targetVal) this.insertAtBack(newVal)
+  let runner = this.head
+  while(runner !== null ){
+    if(runner.data === targetVal){
+      const node = new Node(newVal);
+      node.next = runner.next
+      runner.next.prev = node
+      node.prev = runner
+      runner.next = node
+      return true
+    }
+    runner = runner.next
+  }
+  return false;
+  // make a new node with data equal to newVal
+  // iterate the list to find the node with data = targetVal
+  // set new node next to the target node's next
+  // set the target node's next to the new node
+  // set the new nodes next to the node that used to follow the target node
+  // set the new nodes prev to the target node
+}
 
 /**
  * Inserts a new node with the given newVal before the node that has the
