@@ -62,7 +62,7 @@
 			</section>
 			
 			<section>
-				<h2>Day 7</h2>
+				<h2>Day 7 and 8</h2>
 				<p>
 					Java Spring MVC
 				</p>
@@ -130,7 +130,7 @@
 					<h3>Connecting to MySQL</h3>
 				</section>
 				<section data-auto-animate>
-					<h4 data-id="code-title"><code>pom.xml</code></h4>
+					<h4 data-id="code-title"><code>application.properties</code></h4>
 					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim>
 						spring.datasource.url=jdbc:mysql://localhost:3306/YOUR_SCHEMA
 						spring.datasource.username=root
@@ -139,7 +139,7 @@
 						spring.jpa.hibernate.ddl-auto=update
 					</code></pre>
 				</section>
-
+				
 				<section data-auto-animate>
 					<h4 data-id="code-title"><code>pom.xml</code></h4>
 					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim>
@@ -151,6 +151,11 @@
 				</section>
 				<section>
 					<h1>MySQL Workbench</h1>
+					<div class="r-stack">
+						<img src="../../images/msw.png" alt="" width="400px" class="fragment">
+						<img src="../../images/schema_button.png" alt="" class="fragment">
+					</div>
+			
 				</section>
 
 			</section>
@@ -175,24 +180,284 @@
 				data-separator-notes="^note:"
 				data-charset="iso-8859-15">
 			</section>
-			</section>
-
+		</section>
+		
+		<section>
 			<section>
 				<h3>Services</h3>
+				<p class="fragment">Services are the business logic of our application.</p>
+				<p class="fragment">Services keep our code DRY.</p>
+				<p class="fragment">motto: Fat models, skinny controllers</p>
 			</section>
+			<section data-auto-animate>
+				<h4 data-id="code-title"><code>BookService.java</code></h4>
+				<pre data-id="code-animation"><code  class="hljs r-fit" data-trim>
+					import org.springframework.stereotype.Service;
+					@Service
+					public class BookService {
+					}
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h4 data-id="code-title"><code>BookService.java</code></h4>
+				<p class="fragment">link to the repository</p>
+				<pre data-id="code-animation"><code  class="hljs r-fit" data-trim>
+					import org.springframework.stereotype.Service;
+					@Service
+					public class BookService {
+						private final BookRepository bookRepository;
+						
+						public BookService(BookRepository bookRepository) {
+							this.bookRepository = bookRepository;
+							
+						}
+					</code></pre>
+				</section>
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>BookService.java</code></h4>
+					<p class="fragment">retrieve all books</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim>
+						import org.springframework.stereotype.Service;
+						@Service
+						public class BookService {
+							private final BookRepository bookRepository;
+							
+							public BookService(BookRepository bookRepository) {
+								this.bookRepository = bookRepository;
+							}
+							public List<Book> allBooks() {
+								return bookRepository.findAll();
+							}
+							\
+						}
+					</code></pre>
+				</section>
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>BookService.java</code></h4>
+					<p class="fragment">create a book</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim>
+						import org.springframework.stereotype.Service;
+						import com.codingdojo.mvc.models.Book;
+						@Service
+						public class BookService {
+							private final BookRepository bookRepository;
+						
+							public BookService(BookRepository bookRepository) {
+								this.bookRepository = bookRepository;
+							}
+							public List<Book> allBooks() {
+								return bookRepository.findAll();
+							}
+							public Book createBook(Book b) {
+								return bookRepository.save(b);
+							}
+							
+						}
+					</code></pre>
+				</section>
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>BookService.java</code></h4>
+					<p class="fragment">find a book</p>
+				<pre data-id="code-animation"><code  class="hljs r-fit" data-trim>
+					import org.springframework.stereotype.Service;
+					import com.codingdojo.mvc.models.Book;
+					@Service
+					public class BookService {
+						private final BookRepository bookRepository;
+						
+					public BookService(BookRepository bookRepository) {
+						this.bookRepository = bookRepository;
+					}
+					public List<Book> allBooks() {
+						return bookRepository.findAll();
+					}
+					public Book createBook(Book b) {
+						return bookRepository.save(b);
+					}
+					public Book findBook(Long id) {
+						Optional<Book> optionalBook = bookRepository.findById(id);
+							if(optionalBook.isPresent()) {
+								return optionalBook.get();
+							} else {
+								return null;
+							}
+						}
+					}
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h4 data-id="code-title"><code>BookService.java</code></h4>
+				<pre data-id="code-animation"><code  class="hljs r-fit" data-trim>
+					import org.springframework.stereotype.Service;
+					import com.codingdojo.mvc.models.Book;
+					@Service
+					public class BookService {
+						private final BookRepository bookRepository;
+						
+					public BookService(BookRepository bookRepository) {
+						this.bookRepository = bookRepository;
+					}
+					public List<Book> allBooks() {
+						return bookRepository.findAll();
+					}
+					public Book createBook(Book b) {
+						return bookRepository.save(b);
+					}
+					public Book findBook(Long id) {
+						Optional<Book> optionalBook = bookRepository.findById(id);
+							if(optionalBook.isPresent()) {
+								return optionalBook.get();
+							} else {
+								return null;
+							}
+						}
+					}
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h4 data-id="code-title"><code>BookService.java</code></h4>
+				<pre data-id="code-animation"><code  class="hljs r-fit" data-trim>
+					import org.springframework.stereotype.Service;
+					import com.codingdojo.mvc.models.Book;
+					@Service
+					public class BookService {
+						private final BookRepository bookRepository;
+						
+					public BookService(BookRepository bookRepository) {
+						this.bookRepository = bookRepository;
+					}
+					public List<Book> allBooks() {
+						return bookRepository.findAll();
+					}
+					public Book createBook(Book b) {
+						return bookRepository.save(b);
+					}
+					public Book findBook(Long id) {
+						Optional<Book> optionalBook = bookRepository.findById(id);
+							if(optionalBook.isPresent()) {
+								return optionalBook.get();
+							} else {
+								return null;
+							}
+						}
+					}
+				</code></pre>
+			</section>
+		</section>
+
+
+		<section>
+			<h1>Java CRUD</h1>
+		</section>
+
+		<section>
+			<section>
+				<h1>Create</h1>
+				<p class="fragment"> <code>@ModelAttribute</code> & Data Binding</p>
+			</section>
+			<section data-auto-animate>
+				<h4 data-id="code-title"><code>BookController.java</code></h4>
+				<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers="2|3|9">
+					import org.springframework.web.bind.annotation.GetMapping;
+					import org.springframework.validation.BindingResult;
+					import org.springframework.web.bind.annotation.ModelAttribute;
+
+					@Controller
+					public class BooksController {
+						
+						@GetMapping("/books/new")
+						public String newBook(@ModelAttribute("book") Book book) {
+							return "/books/new.jsp";
+						}
+					}
+					
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h4 data-id="code-title"><code>new.jsp</code></h4>
+				<pre data-id="code-animation"><code width="400px"  class="hljs r-fit" data-trim data-line-numbers="4|6|7|8">
+					<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+					<%@ page isErrorPage="true" %>    
+					<h1>New Book</h1>
+					<form:form action="/books" method="post" modelAttribute="book">
+						<p>
+							<form:label path="title">Title</form:label>
+							<form:errors path="title"/>
+							<form:input path="title"/>
+						</p>
+						<p>
+							<form:label path="description">Description</form:label>
+							<form:errors path="description"/>
+							<form:textarea path="description"/>
+						</p>
+						<p>
+							<form:label path="language">Language</form:label>
+							<form:errors path="language"/>
+							<form:input path="language"/>
+						</p>
+						<p>
+							<form:label path="numberOfPages">Pages</form:label>
+							<form:errors path="numberOfPages"/>     
+							<form:input type="number" path="numberOfPages"/>
+						</p>    
+						<input type="submit" value="Submit"/>
+					</form:form>    
+					
+					
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h4 data-id="code-title"><code>BookController.java</code></h4>
+				<pre data-id="code-animation"><code  class="hljs" data-trim data-line-numbers="9|10|11|13">
+					import org.springframework.web.bind.annotation.GetMapping;
+					import org.springframework.validation.BindingResult;
+					import org.springframework.web.bind.annotation.ModelAttribute;
+					
+					@Controller
+					public class BooksController {
+						
+						@PostMapping("/books")
+						public String create(@Valid @ModelAttribute("book") Book book, BindingResult result) {
+							if (result.hasErrors()) {
+								return "/books/new.jsp";
+							} else {
+								bookService.createBook(book);
+								return "redirect:/books";
+							}
+						}
+					}		
+				</code></pre>
+			</section>
+			<section data-auto-animate>
+				<h4 data-id="code-title"><code>Book.java</code></h4>
+				<pre data-id="code-animation"><code  class="hljs" data-trim data-line-numbers="">
+
+					@Size(min = 3, max = 40, message="Language must be at least 3 characters.")
+					private String language;
+	
+					@NotNull
+					@Min(value=100, message="Must be at least 100 pages.")
+					private Integer numberOfPages;
+			
+				</code></pre>
+			</section>
+		</section>
+			
 
 		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+</div>
 
-	
-
-	
-
-
-			</div>
-		</div>
-
-		<script src="../../dist/reveal.js"></script>
-		<script src="../../plugin/zoom/zoom.js"></script>
+<script src="../../dist/reveal.js"></script>
+<script src="../../plugin/zoom/zoom.js"></script>
 		<script src="../../plugin/notes/notes.js"></script>
 		<script src="../../plugin/search/search.js"></script>
 		<script src="../../plugin/markdown/markdown.js"></script>
