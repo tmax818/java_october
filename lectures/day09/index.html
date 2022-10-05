@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Java October</title>
+
+		<meta name="description" content="October Java - Coding Dojo - Burbank">
+		<meta name="author" content="Tyler Maxwell">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../plugin/highlight/monokai.css">
+		<style>
+			.container{
+				display: flex;
+			}
+			.col{
+				flex: 2;
+			}
+			</style>
+	</head>
+
+	<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<a href="#">
+					<img
+					src="./../../images/coding_dojo_logo_white.png"
+					alt="cd logo"
+					style="
+						height: 200px;
+						margin: 0 auto 4rem auto;
+						background: transparent;
+					"
+					class="demo-logo"
+					/>
+				</a>
+			</section>
+				
+			<section>
+			<img width="500" src="../../images/Java-Logo.webp" alt="java logo">
+			</section>
+
+			<section>
+				<img src="../../images/spring.png" alt="">
+			</section>
+
+			<section>
+				<img src="../../images/spring-boot.webp" alt="">
+			</section>
+			
+			<section>
+				<h2>Day 9 and 10</h2>
+				<p>
+					Java Relationships
+				</p>
+			</section>
+				
+				
+			<section data-markdown="assignments.md"
+				data-separator="^---"
+				data-separator-vertical="^--"
+				data-separator-notes="^note:"
+				data-charset="iso-8859-15">
+			</section>
+
+
+			<section>
+				<h1>Java CRUD</h1>
+			</section>
+
+			<section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>new.jsp</code></h4>
+					<pre data-id="code-animation"><code width="400px"  class="hljs r-fit" data-trim data-line-numbers="4|6|7|8">
+						<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+						<%@ page isErrorPage="true" %>    
+						<h1>New Book</h1>
+						<form:form action="/books" method="post" modelAttribute="book">
+							<p>
+								<form:label path="title">Title</form:label>
+								<form:errors path="title"/>
+								<form:input path="title"/>
+							</p>
+							<p>
+								<form:label path="description">Description</form:label>
+								<form:errors path="description"/>
+								<form:textarea path="description"/>
+							</p>
+							<p>
+								<form:label path="language">Language</form:label>
+								<form:errors path="language"/>
+								<form:input path="language"/>
+							</p>
+							<p>
+								<form:label path="numberOfPages">Pages</form:label>
+								<form:errors path="numberOfPages"/>     
+								<form:input type="number" path="numberOfPages"/>
+							</p>    
+							<input type="submit" value="Submit"/>
+						</form:form>    
+						
+						
+					</code></pre>
+				</section>
+
+
+			</section>
+			
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+</div>
+
+<script src="../../dist/reveal.js"></script>
+<script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				width: 1200,
+				height: 600,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
