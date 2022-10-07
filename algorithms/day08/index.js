@@ -21,7 +21,10 @@
      * @param {any} item The new item to be added to the top / back.
      * @returns {number} The new length of this stack.
      */
-    push(item) {}
+    push(item) {
+      this.items.push(item)
+      return this.items.length
+    }
   
     /**
      * Removes the top / last item from this stack.
@@ -29,7 +32,9 @@
      * - Space: O(1) constant.
      * @returns {any} The removed item or undefined if this stack was empty.
      */
-    pop() {}
+    pop() {
+      return this.items.pop()
+    }
   
     /**
      * Retrieves the top / last item from this stack without removing it.
@@ -37,7 +42,9 @@
      * - Space: O(1) constant.
      * @returns {any} The top / last item of this stack.
      */
-    peek() {}
+    peek() {
+      return this.items[0]
+    }
   
     /**
      * Returns whether or not this stack is empty.
@@ -45,7 +52,9 @@
      * - Space: O(1) constant.
      * @returns {boolean}
      */
-    isEmpty() {}
+    isEmpty() {
+      return this.items.length === 0
+    }
   
     /**
      * Returns the size of this stack.
@@ -53,7 +62,9 @@
      * - Space: O(1) constant.
      * @returns {number} The length.
      */
-    size() {}
+    size() {
+      return this.items.length
+    }
   }
   
   class StackNode {
@@ -66,5 +77,41 @@
   class LinkedListStack {
     constructor() {
       this.head = null;
+      this.tail = null;
+      this.length = 0;
+    }
+
+    isEmpty(){
+      return (this.head === null && this.tail === null) 
+    }
+
+    push(data){
+      const node = new StackNode(data)
+      this.length++
+      if(this.isEmpty()){
+        this.head = this.tail = node
+      } else {
+        this.tail = node
+      }
+    }
+
+    pop(){
+      let data = this.tail.data
+      let runner = this.head
+      if(this.length > 2){
+        return this.head.data
+      }
+      while(runner.next.next !== null){
+        runner = runner.next
+      }
+      this.tail = runner
+      runner.next = null 
+      return data
     }
   }
+
+
+
+  const stackList = new LinkedListStack()
+  stackList.push('node1')
+  stackList.pop()

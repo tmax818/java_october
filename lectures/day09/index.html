@@ -81,17 +81,146 @@
 				<h1>Relationships</h1>
 			</section>
 
+			<section>
 
-			
+				<section>
+					<h3>One to Many</h3>
+				</section>
 
-		
-		
-		
-		
-		
-		
-		
-		
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>Dojo.java</code></h4>
+					<p class="fragment">A dojo has many ninjas</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
+				@Entity
+				@Table(name="dojos")
+				public class Dojo {
+
+				}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>Dojo.java</code></h4>
+					<p class="fragment"> Use<code>@OneToMany</code></p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
+				@Entity
+				@Table(name="dojos")
+				public class Dojo {
+					@OneToMany(mappedBy="dojo", fetch = FetchType.LAZY)
+					private List&lt;Ninja&gt; ninjas;
+					
+					public Dojo() {
+						
+					}
+				}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>Dojo.java</code></h4>
+					<p class="fragment">add other dojo attributes</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
+				@Entity
+				@Table(name="dojos")
+				public class Dojo {
+					
+					@Id
+					@GeneratedValue(strategy = GenerationType.IDENTITY)
+					private Long id;
+					private String name;
+					@Column(updatable=false)
+					private Date createdAt;
+					private Date updatedAt;
+					@OneToMany(mappedBy="dojo", fetch = FetchType.LAZY)
+					private List&lt;Ninja&gt; ninjas;
+					
+					public Dojo() {
+						
+					}
+				}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>Ninja.java</code></h4>
+					<p class="fragment">a ninja belongs to a dojo</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
+						@Entity
+						@Table(name="ninjas")
+						public class Ninja {
+						}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>Ninja.java</code></h4>
+					<p class="fragment"> Use<code>@ManyToOne</code></p>
+					<p class="fragment"> and<code>@JoinColumn(name="dojo_id")</code></p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
+						@Entity
+						@Table(name="ninjas")
+						public class Ninja {
+							@ManyToOne(fetch = FetchType.LAZY)
+							@JoinColumn(name="dojo_id")
+							private Dojo dojo;
+							
+							public Ninja() {								
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>Ninja.java</code></h4>
+					<p class="fragment">add other attributes of a ninja</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
+						@Entity
+						@Table(name="ninjas")
+						public class Ninja {
+							@Id
+							@GeneratedValue(strategy = GenerationType.IDENTITY)
+							private Long id;
+							private String firstName;
+							private String lastName;
+							private int age;
+							@Column(updatable=false)
+							private Date createdAt;
+							private Date updatedAt;
+							@ManyToOne(fetch = FetchType.LAZY)
+							@JoinColumn(name="dojo_id")
+							private Dojo dojo;
+							
+							public Ninja() {								
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
+				@Entity
+				@Table(name="dojos")
+				public class Dojo {
+					@OneToMany(mappedBy="dojo", fetch = FetchType.LAZY)
+					private List&lt;Ninja&gt; ninjas;
+				}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>Ninja.java</code></h4>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
+						@Entity
+						@Table(name="ninjas")
+						public class Ninja {
+							@ManyToOne(fetch = FetchType.LAZY)
+							@JoinColumn(name="dojo_id")
+							private Dojo dojo;
+						}
+					</code></pre>
+				</section>
+			</section>
+
 		
 	</div>
 </div>
@@ -117,7 +246,6 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
 			});
-
 		</script>
 
 	</body>
