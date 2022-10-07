@@ -197,6 +197,7 @@
 				</section>
 
 				<section data-auto-animate>
+					<h4 data-id="code-title"><code>Dojo.java</code></h4>
 					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
 				@Entity
 				@Table(name="dojos")
@@ -219,6 +220,137 @@
 						}
 					</code></pre>
 				</section>
+			</section>
+
+			<section>
+
+				<section>
+					<h3>Login and Registration</h3>
+				</section>
+
+
+				<section>
+					<h3>Registration</h3>
+					<p class="fragment">What is registration?</p>
+					<p class="fragment">Adding users to our database!</p>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>HomeController.java</code></h4>
+					<p class="fragment">create route to display login/Reg form</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers>
+						@Controller
+						public class HomeController {
+							@GetMapping("/")
+							public String index(Model model) {
+								// Bind empty User and LoginUser objects to capture form input
+								model.addAttribute("newUser", new User());
+								model.addAttribute("newLogin", new LoginUser());
+								return "index.jsp";
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>HomeController.java</code></h4>
+					<p class="fragment">send instance of a User for data binding</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers="6">
+						@Controller
+						public class HomeController {
+							@GetMapping("/")
+							public String index(Model model) {
+								// Bind empty User and LoginUser objects to capture form input
+								model.addAttribute("newUser", new User());
+								model.addAttribute("newLogin", new LoginUser());
+								return "index.jsp";
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>index.jsp</code></h4>
+					<p class="fragment">the instance becomes the <code>modelAttribute</code></p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers="2">
+						&lt;h2>Register&lt/h2&gt;
+						&lt;form:form action="/register" method="post" modelAttribute="newUser"&gt;
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>HomeController.java</code></h4>
+					<p class="fragment">process the user input</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers="">
+						@Controller
+						public class HomeController {
+							@PostMapping("/register")
+							public String register(@Valid @ModelAttribute("newUser") User newUser, 
+							BindingResult result, Model model, HttpSession session) {
+								User user = userService.register(newUser, result);
+								if (result.hasErrors()) {
+									model.addAttribute("newLogin", new LoginUser());
+									return "index.jsp";
+								}
+								session.setAttribute("userId", user.getId());
+								return "redirect:/welcome";
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>HomeController.java</code></h4>
+					<p class="fragment">use the register method in the UserService</p>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers="6">
+						@Controller
+						public class HomeController {
+							@PostMapping("/register")
+							public String register(@Valid @ModelAttribute("newUser") User newUser, 
+							BindingResult result, Model model, HttpSession session) {
+								User user = userService.register(newUser, result);
+								if (result.hasErrors()) {
+									model.addAttribute("newLogin", new LoginUser());
+									return "index.jsp";
+								}
+								session.setAttribute("userId", user.getId());
+								return "redirect:/welcome";
+							}
+						}
+					</code></pre>
+				</section>
+
+
+				<section data-auto-animate>
+					<h4 data-id="code-title"><code>UserService.java</code></h4>
+					<pre data-id="code-animation"><code  class="hljs r-fit" data-trim data-line-numbers="4|6-7|10-11|14-15|18|20|22">
+					@Service
+					public class UserService {
+						public User register(User newUser, BindingResult result) {
+							Optional&lt;User&lt; potentialUser = userRepository.findByEmail(newUser.getEmail());
+							// Reject if email is taken (present in database)
+							if(potentialUser.isPresent()) {
+								result.rejectValue("email", "Matches", "An account with that email already exists!");
+							}
+							// Reject if password doesn't match confirmation
+							if(!newUser.getPassword().equals(newUser.getConfirm())) {
+								result.rejectValue("confirm", "Matches", "The Confirm Password must match Password!");
+							}
+							// Return null if result has errors
+							if(result.hasErrors()) {
+								return null;
+							}
+							// hash password
+							String hashed = BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt());
+							// set password
+							newUser.setPassword(hashed);
+							// save user to database
+							return userRepository.save(newUser);
+						}
+					}
+					</code></pre>
+				</section>
+
 			</section>
 
 		
