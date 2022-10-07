@@ -15,7 +15,10 @@
      * @param {any} item The new item to add to the back.
      * @returns {number} The new size of this queue.
      */
-    enqueue(item) {}
+    enqueue(item) {
+      this.items.push(item)
+      return this.items.length
+    }
   
     /**
      * Removes and returns the first item of this queue.
@@ -24,7 +27,9 @@
      * - Space: O(1) constant.
      * @returns {any} The first item or undefined if empty.
      */
-    dequeue() {}
+    dequeue() {
+      return this.items.shift();
+    }
   
     /**
      * Retrieves the first item without removing it.
@@ -32,7 +37,9 @@
      * - Space: O(1) constant.
      * @returns {any} The first item or undefined if empty.
      */
-    front() {}
+    front() {
+      return this.items[0];
+    }
   
     /**
      * Returns whether or not this queue is empty.
@@ -40,7 +47,9 @@
      * - Space: O(1) constant.
      * @returns {boolean}
      */
-    isEmpty() {}
+    isEmpty() {
+      return this.items.length === 0;
+    }
   
     /**
      * Retrieves the size of this queue.
@@ -48,7 +57,22 @@
      * - Space: O(1) constant.
      * @returns {number} The length.
      */
-    size() {}
+    size() {
+      return this.items.length;
+    }
   }
   
   /* Rebuild the above class using a linked list instead of an array. */
+  class Node{
+    constructor(data){
+      this.data = data;
+      this.next = null;
+    }
+  }
+
+  class SLL{
+    constructor(){
+      this.head = null
+      this.tail = null
+    }
+  }
