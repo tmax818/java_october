@@ -1,25 +1,31 @@
-Samanta, Duque, Richard = Renting app. Short term rentals for coding dojo students. Called Dojos for Ninjas
+Samanta, Duque, Richard = Renting app. Short term rentals for coding dojo students. Called Dojos for Ninjas,not doing api, forms, link suggestions
 Goal: get all the routes/CSS 
+Goal: finish forms stuff
 
 Hans = Poker game cli
 Goal: game class
 
 Medrik = Upload projects, hosting platform for students
 Goal: wireframe
+Goal: upload feature
 
-Val = Come up with an idea
+Val = Come up with an idea, magic 8 ball
 
 John W. = discord bot or auth2 
 Goal: decide on something. watch videos
+Goal: javascript discord bot
 
 Lucie = Job application tracker. 
 Goal: react form talk java backend
+Goal: finish app deploy tomorrow
 
-Cameron and Nisrine = Multiplayer game, socket i/o 
+Cameron and Nisrine = Multiplayer game, socket i/o,  
 goal: optimze state management. logic layer communication between services
+goal: styling and deploy
 
 Alex = snake game. eclipse 
 goal: get it working in eclipse
+goal: 
 
 Troy = Supermario bros in Java/Chess
 goal: decide between research 
@@ -27,5 +33,26 @@ goal: decide between research
 Shawn = last stack project front end. App for security company
 goal: frontend
 
-Omar = decide today.
+Omar = decide today. website
+goal: finsh it
 
+Daniel = chat with socket. 
+goal: sql database
+
+Tre = 3.js 
+goal: learning 3 js
+
+ricky = crm Monday.com 
+goal: tailwind 
+
+John A. = android studio. Travel
+goal: 
+
+Luis = Game 
+goal: 
+
+Ash: clone instagram real estate functionality
+goal
+
+Christian: game
+goal: tinder clone
